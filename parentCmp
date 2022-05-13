@@ -1,0 +1,10 @@
+<aura:component access="global" controller="ActivityTimelineClass">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="lstActivity" type="List"/>
+    <ul class="slds-timeline">
+    <!--Iterate all activity records in child component-->
+        <aura:iteration items="{!v.lstActivity}" var="task">
+            <c:childCmp activity="{!task}"/>
+        </aura:iteration>
+    </ul>
+</aura:component>
